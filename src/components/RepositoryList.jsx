@@ -1,21 +1,25 @@
+import { useState, useEffect } from 'react';
 import { RepositoryItem } from "./RepositoryItem";
 
-const repository = {
-  name: 'unform',
-  description: 'Forms in React',
-  link: 'https://github.com/unform/unform',
-}
+import '../styles/repositories.scss';
 
 export function RepositoryList() { // Conceito: Componentes
+  const [repositories, setRepositories] = useState([]);
+  
+  useEffect(() => {
+    fetch('https://api.github.com/users/Pecorario/repos')
+    .then(response => response.json())
+    .then(data => setRepositories(data))
+  }, []); // IMPORTANTE: se passar o array de dependências vazio, o useEffect irá disparar apenas uma vez assim que o componente for exibido em tela
+
   return (
     <section className="repository-list">
       <h1>Lista de repositórios</h1>
 
-      <ul> 
-        <RepositoryItem repository={repository} />
-        <RepositoryItem repository={repository} />
-        <RepositoryItem repository={repository} />
-        <RepositoryItem repository={repository} />
+      <ul>
+        {repositories.map(repository => {
+          return <RepositoryItem key={repository.name} repository={repository} />
+        })}
       </ul>
     </section>
   )
