@@ -1,6 +1,6 @@
 # 🚀 ignite-reactjs
 Repositório utilizado na semana 01 da trilha de React.JS do programa de aceleração Ignite, disponibilizado pela RocketSeat.
-Nesta semana foi estudado conceitos e fundamentos básicos de React (configurações iniciais do ambiente, componentes, propriedades, estado e imutabilidade, uso de fast refresh, hooks) e Typescript.
+Nesta semana foi estudado conceitos e fundamentos básicos de React (configurações iniciais do ambiente, componentes, propriedades, estado e imutabilidade, uso de fast refresh e hooks) e Typescript (fundamentos e componentes).
 
 ## 🚀 Como executar
 
